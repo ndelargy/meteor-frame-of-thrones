@@ -1,0 +1,66 @@
+<head>
+  <title>frame-of-thrones</title>
+</head>
+
+<body>
+  {{> mainframe}}
+</body>
+
+<template name="mainframe">
+  <div id="bo-selector">
+    <h1>Frame of Thrones</h1>
+    {{> players}}
+    {{> addplayer}}  
+    {{> sorter}}
+  </div>
+  {{#each houses}}
+    {{> house}}
+  {{/each}}
+</template>
+
+<template name="players">
+  {{#each players}}
+    {{> player}}
+  {{/each}}
+</template>
+
+<template name="player">
+  <div class="player not-assigned">
+    <span class="name">{{name}}</span>
+    <span class="remove"><a href="#">[x]</a></span>
+  </div>    
+</template>
+
+<template name="addplayer">
+  <div>
+    <input type="text" id="new-player" value="" />
+    {{#if new_player_name}}
+      <input type="button" class="add" value="add new player" />
+    {{/if}}
+  </div>
+</template>
+
+<template name="sorter">
+  {{#if sortee}}
+  <div>
+    <span class="name">{{sortee}}</span>
+  </div>
+  {{/if}}
+  <div>
+    {{#if sortee}}
+    <input type="button" class="assign-unassigned-player" value="assign" />
+    {{else}}
+    <input type="button" class="random-unassigned-player" value="next player" />
+    {{/if}}
+  </div>
+</template>
+
+<template name="house">
+  <div class="house" id="{{name}}">
+    <h2>{{name}}</h2>
+    {{#each players_objs}}
+    <div>{{player_name}}</div>
+    {{/each}}
+  </div>
+</template>
+

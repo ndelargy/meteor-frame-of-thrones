@@ -1,0 +1,42 @@
+body {
+  background: #cbb
+}
+
+hr {
+  clear: both;
+  display: block;
+  height: 0;
+  border-top: 1px solid rgba(0,0,0, .12);
+  border-bottom: 1px solid rgba(255, 255, 255, .15);
+}
+  
+#bo-selector {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-left: -10%;
+  width: 20%;
+}
+
+.house {
+  position: absolute;
+  width: 200px;
+  margin: 20px;
+}
+
+#Stark {
+  top: 0;
+  left: 0;
+}
+#Lannister {
+  top: 0;
+  right: 0;
+}
+#Baratheon {
+  bottom: 0;
+  left: 0;
+}
+#Targaryen {
+  bottom: 0;
+  right: 0;
+}
